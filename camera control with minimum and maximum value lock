@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class cameraControl : MonoBehaviour
+{
+    public float zoomsize = 0.04f;
+    public Camera cameraComponent;
+    void Start()
+    {
+        
+    }
+     void Update()
+    {   
+    //calling method
+        camerazoomIO();
+    }
+    
+    void camerazoomIO()
+    {
+        if(Input.GetKey(KeyCode.E) && (cameraComponent.orthographicSize < 10))
+        {
+            cameraComponent.orthographicSize += zoomsize;
+        }
+        else if(Input.GetKey(KeyCode.Q) && (cameraComponent.orthographicSize > 1))
+        {
+            {   
+                cameraComponent.orthographicSize -= zoomsize;
+            }
+        }
+    }
+}
