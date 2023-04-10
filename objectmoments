@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Moments : MonoBehaviour
+{   
+    //movement to object
+    public float yspeed = 0.5f;
+    public float xspeed = 0.5f;
+    void Start()
+    {
+        
+    }
+    void Update()
+    {   
+        //calling method
+        move();
+    }
+    void move()
+    {   
+        //move the object right
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(xspeed, 0, 0);
+        }
+        //move the object left
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.position -= new Vector3(xspeed, 0, 0);
+        }
+        //move the object up
+        else if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, yspeed, 0);
+        }
+        // move the object down
+        else if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= new Vector3(0, yspeed, 0);
+        }
+    }
+}
