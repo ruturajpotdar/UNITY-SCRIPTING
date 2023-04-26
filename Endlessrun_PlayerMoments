@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class player : MonoBehaviour
+{
+    public float movementSpeed = 10f;
+    public SpawnManager spawnManager;
+    void Start()
+    {
+        
+    }
+
+  
+    void Update()
+    {
+        float Hmovement = Input.GetAxis("Horizontal") * movementSpeed / 2;
+        float Vmovement = Input.GetAxis("Vertical") * movementSpeed ;
+
+
+        transform.Translate(new Vector3(Hmovement, 0, Vmovement)* Time.deltaTime);
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        spawnManager.SpawnTriggerEntered();
+    }
+}
