@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class camera : MonoBehaviour
+{
+    private Transform player;
+
+    private float YoffSet = 2f;
+    private float ZoffSet = -3;
+
+
+    void Start()
+    {
+        player = GameObject.Find("player").transform;
+    }
+
+    
+    void Update()
+    {
+        transform.position = new Vector3(player.position.x,player.position.y + YoffSet,player.position.z + ZoffSet);
+    }
+}
